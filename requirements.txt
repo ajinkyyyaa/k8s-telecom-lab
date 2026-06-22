@@ -1,0 +1,5 @@
+# Add your Python dependencies here
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
