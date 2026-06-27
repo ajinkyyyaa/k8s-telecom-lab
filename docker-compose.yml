@@ -1,0 +1,21 @@
+services:
+
+  postgres:
+    image: postgres:17
+
+    environment:
+      POSTGRES_DB: telecom
+      POSTGRES_USER: telecom
+      POSTGRES_PASSWORD: telecom123
+
+    ports:
+      - "5432:5432"
+
+  app:
+    build: .
+
+    ports:
+      - "8000:8000"
+
+    depends_on:
+      - postgres
