@@ -1,7 +1,11 @@
 from fastapi import FastAPI
 from random import choice
+from app.database import Base, engine
+from app import models
 
 app = FastAPI()
+
+Base.metadata.create_all(bind=engine)
 
 success_flow = [
     "Registration Request",
